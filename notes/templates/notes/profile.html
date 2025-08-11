@@ -1,0 +1,7 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+<h1 class="mb-4">Welcome, {{ user.username }}!</h1>
+<p>This is your profile page.</p>
+<a href="{% url 'note_list' %}" class="btn btn-primary">Go to My Notes</a>
+{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'notes/base.html' %}
+
+{% block content %}
+<div class="row justify-content-center">
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body text-center">
+        <h2 class="card-title text-danger">Delete Note</h2>
+        <p class="card-text">Are you sure you want to delete the note titled **"{{ object.title }}"**?</p>
+        <form method="post">
+          {% csrf_token %}
+          <div class="d-grid gap-2 d-md-block mt-4">
+            <button type="submit" class="btn btn-danger">Yes, I'm sure</button>
+            <a href="{% url 'note_list' %}" class="btn btn-secondary">Cancel</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
